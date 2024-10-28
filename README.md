@@ -1,4 +1,5 @@
-# Communicator
+# Communicator 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d336906d-8e34-4bd5-9829-476ed0830e88/deploy-status)](https://app.netlify.com/sites/communicator-messenger/deploys)\
 Мессенджер для курса Мидл фронтенд разработчик.
 
 ## Установка
