@@ -1,1 +1,1 @@
-export  { LayoutCentered } from '../../../example/src/LayoutCentered/LayoutCentered.js'
+export { LayoutCentered } from "./LayoutCentered/LayoutCentered.js";

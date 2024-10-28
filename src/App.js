@@ -10,7 +10,7 @@ Object.entries(Components).forEach(([name, component]) => {
   Handlebars.registerPartial(name, component);
 });
 
-Object.entries(Layouts).forEach(([ name, layout ]) => {
+Object.entries(Layouts).forEach(([name, layout]) => {
   Handlebars.registerPartial(name, layout);
 });
 
@@ -48,7 +48,7 @@ export default class App {
         page: Pages.ErrorPage,
         context: {
           code: "404",
-          text: "Не туда попали"
+          text: "Не туда попали",
         },
       },
       500: {
@@ -56,7 +56,7 @@ export default class App {
         page: Pages.ErrorPage,
         context: {
           code: "500",
-          text: "Мы уже фиксим"
+          text: "Мы уже фиксим",
         },
       },
     };
