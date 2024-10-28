@@ -1,5 +1,4 @@
-#Communicator
----
+# Communicator
 Мессенджер для курса Мидл фронтенд разработчик.
 
 ## Установка
@@ -12,12 +11,12 @@
 Figma: https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link?node-id=0%3A1
 
 ### Веб-приложение
-Netlify: 
+Netlify: https://communicator-messenger.netlify.app
 
 ### Страницы
- - Авторизация: `/login`
- - Регистрация: `/register`
- - Список чатов и лента переписки: `/chat`
- - Настройки пользователя: `/settings`
- - Страница 404: `/404`
- - Страница 5**: `/500`
+ - Авторизация: [/login](https://communicator-messenger.netlify.app/login)
+ - Регистрация: [/register](https://communicator-messenger.netlify.app/register)
+ - Список чатов и лента переписки: [/chat](https://communicator-messenger.netlify.app/chat)
+ - Настройки пользователя: [/settings](https://communicator-messenger.netlify.app/settings)
+ - Страница 404: [/404](https://communicator-messenger.netlify.app/404)
+ - Страница 5**: [/500](https://communicator-messenger.netlify.app/500)
