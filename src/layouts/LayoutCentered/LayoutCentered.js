@@ -1,2 +1,2 @@
-import './LayoutCentered.pcss';
-export { default as LayoutCentered } from './LayoutCentered.hbs?raw'
+import "./LayoutCentered.pcss";
+export { default as LayoutCentered } from "./LayoutCentered.hbs?raw";
