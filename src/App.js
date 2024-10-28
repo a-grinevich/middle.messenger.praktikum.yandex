@@ -1,12 +1,17 @@
 import Handlebars from "handlebars";
 import * as Pages from "./pages";
 import * as Components from "./components";
+import * as Layouts from "./layouts";
 import { mockPages } from "./mockData.js";
 import "./helpers/handlebarsHelpers.js";
 
 // Register partials
 Object.entries(Components).forEach(([name, component]) => {
   Handlebars.registerPartial(name, component);
+});
+
+Object.entries(Layouts).forEach(([ name, layout ]) => {
+  Handlebars.registerPartial(name, layout);
 });
 
 export default class App {
@@ -42,14 +47,16 @@ export default class App {
         title: "Страница 404",
         page: Pages.ErrorPage,
         context: {
-          code: "404"
+          code: "404",
+          text: "Не туда попали"
         },
       },
       500: {
         title: "Страница 5**",
         page: Pages.ErrorPage,
         context: {
-          code: "500"
+          code: "500",
+          text: "Мы уже фиксим"
         },
       },
     };
