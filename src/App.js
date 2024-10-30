@@ -2,7 +2,7 @@ import Handlebars from "handlebars";
 import * as Pages from "./pages";
 import * as Components from "./components";
 import * as Layouts from "./layouts";
-import { mockPages } from "./mockData.js";
+import { mockChats, mockPages } from "./mockData.js";
 import "./helpers/handlebarsHelpers.js";
 
 // Register partials
@@ -38,6 +38,9 @@ export default class App {
       chat: {
         title: "Список чатов и лента переписки",
         page: Pages.ChatPage,
+        context: {
+          chats: [...mockChats, ...mockChats],
+        },
       },
       settings: {
         title: "Настройки пользователя",
@@ -71,11 +74,14 @@ export default class App {
   }
 
   attachEventListeners() {
-    const navigationLinks = document.querySelectorAll(".navigation-link");
-    navigationLinks.forEach((link) => {
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
       link.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.changePage(e.target.dataset.page);
+        const page = e.target.dataset.page;
+        if (page) {
+          e.preventDefault();
+          this.changePage(page);
+        }
       });
     });
     window.addEventListener(

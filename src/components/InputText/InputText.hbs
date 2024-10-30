@@ -1,4 +1,4 @@
-<label class="input-text__label">
-    <input class="input-text" id="{{id}}" name="{{name}}" type="{{type}}" value="{{value}}" required>
-    <span class="input-text__label-text">{{label}}</span>
+<label class="input-text__label {{ classModifier }}">
+    <input class="input-text" id="{{ id }}" name="{{ name }}" type="{{ type }}" value="{{ value }}" {{# if disabled }}disabled{{/ if }} required>
+    <span class="input-text__label-text">{{ label }}</span>
 </label>

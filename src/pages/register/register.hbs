@@ -12,8 +12,8 @@
                 {{> InputText label="Пароль еще раз" id="confirm-password" name="confirm-password" type="password" value="" }}
             </div>
             <p class="form__buttons form-auth__buttons">
-                {{> Button text="Войти" id="signin" classModifier="button_primary button_wide" }}
-                {{> Button text="Нет аккаунта?" id="signup" classModifier="button_secondary button_wide" }}
+                {{> Button text="Зарегистрироваться" id="signin" classModifier="button_primary button_wide" }}
+                {{> Link href="login" text="Войти" class="button button_secondary button_wide"  data-page="login" }}
             </p>
         {{/ FormAuth }}
     {{/ ModalContainer }}

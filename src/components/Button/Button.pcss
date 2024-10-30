@@ -1,5 +1,6 @@
-.button {
-    background: var(--color-primary);
+.button,
+a.button {
+    background-color: var(--color-primary);
     border: none;
     border-radius: 8px;
     padding: 12px;
@@ -8,13 +9,31 @@
     font-weight: 500;
     line-height: 13px;
     cursor: pointer;
+    display: inline-block;
+    text-align: center;
+
+    &:hover {
+        text-decoration: none;
+    }
 
     &_secondary {
-        background: #FFFFFF;
+        background-color: #FFFFFF;
         color: var(--color-primary);
+    }
+
+    &_secondary:hover {
+        background-color: var(--color-secondary);
     }
 
     &_wide {
         width: 100%;
+    }
+
+    &_round {
+        border-radius: 50%;
+    }
+
+    &_round_icon-back {
+        background:var(--color-primary) url("../Icons/ArrowLeft.svg") no-repeat center;
     }
 }

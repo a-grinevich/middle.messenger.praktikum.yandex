@@ -1,12 +1,12 @@
-{{#> LayoutCentered}}
+{{#> LayoutCentered }}
     <h1>Список страниц</h1>
     <nav>
-        {{#if pages.length}}
+        {{# if pages.length }}
             <ul>
-                {{#each pages}}
+                {{# each pages }}
                     <li>{{> Link href=(concat "/" this.page) class="navigation-link" data-page=this.page text=this.title }}</li>
-                {{/each}}
+                {{/ each }}
             </ul>
-        {{/if}}
+        {{/ if }}
     </nav>
-{{/LayoutCentered}}
+{{/ LayoutCentered }}

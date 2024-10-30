@@ -8,7 +8,7 @@
             </div>
             <p class="form__buttons form-auth__buttons">
                 {{> Button text="Войти" id="signin" classModifier="button_primary button_wide" }}
-                {{> Button text="Нет аккаунта?" id="signup" classModifier="button_secondary button_wide" }}
+                {{> Link href="register" text="Нет аккаунта?" class="button button_secondary button_wide"  data-page="register" }}
             </p>
         {{/ FormAuth }}
     {{/ ModalContainer }}

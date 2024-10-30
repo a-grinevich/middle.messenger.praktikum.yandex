@@ -1,0 +1,96 @@
+.chat {
+
+    &__empty-message {
+        color: #999;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+    }
+}
+
+.chat-list {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    &__topbar {
+        padding: 0 10px;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    &__topbar-profile-link-wrap {
+        text-align: right;
+        padding: 21px 0 9px 0;
+        font-size: 12px;
+        line-height: 12px;
+    }
+
+    &__topbar-profile-link {
+        color: var(--color-text-secondary);
+        font-weight: 500;
+    }
+
+    &__topbar-profile-link:after {
+        content: url("/src/components/Icons/Chevron.svg");
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 8px;
+    }
+
+    &__topbar-search {
+        padding: 14px 0;
+    }
+
+    &__list {
+        flex-grow: 1;
+        overflow: hidden;
+    }
+}
+
+.search {
+    position: relative;
+    display: block;
+    cursor: pointer;
+
+    &__input {
+        border-radius: 5px;
+        background: var(--color-background-accent);
+        width: 100%;
+        padding: 10px 10px 10px 34px;
+        color: var(--color-text-primary);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        cursor: pointer;
+    }
+
+    &__placeholder {
+        color: var(--color-text-secondary);
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        margin-left: 4px;
+    }
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        transition: all .2s ease;
+    }
+
+    &__input:focus + &__icon,
+    &__input:valid + &__icon{
+        transform: translateY(-50%);
+        left: 10px;
+    }
+
+    &__input:focus + &__icon &__placeholder,
+    &__input:valid + &__icon &__placeholder{
+        display: none;
+    }
+}
