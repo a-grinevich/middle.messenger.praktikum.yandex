@@ -1,1 +1,7 @@
-<h1>Error {{code}}</h1>
+{{#> LayoutCentered}}
+    <div class="error">
+        <h1 class="error__title">{{ code }}</h1>
+        <p class="error__text">{{ text }}</p>
+        {{> Link href="chat" text="Назад к чатам" class="error__backlink"  data-page="chat" }}
+    </div>
+{{/LayoutCentered}}

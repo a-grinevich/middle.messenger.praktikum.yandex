@@ -1,1 +1,36 @@
-<h1>Chat</h1>
+{{#> LayoutChats }}
+    {{#* inline "navColumn" }}
+        <div class="chat-list">
+            <div class="chat-list__topbar">
+                <div class="chat-list__topbar-profile-link-wrap">
+                    {{> Link href="settings" text="Профиль" class="chat-list__topbar-profile-link"  data-page="settings" }}
+                </div>
+                <div class="chat-list__topbar-search">
+                    <label class="search">
+                        <input class="search__input" type="search" name="search" required>
+                        <span class="search__icon">
+                            {{> Search }} <span class="search__placeholder">Поиск</span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+            <div class="chat-list__list">
+                {{#if chats.length}}
+                    {{#each chats}}
+                        {{> ChatItem avatar=this.photo name=this.name preview=this.preview datetime=this.datetime count=this.count classModifier="chat-list__list-item" }}
+                    {{/each}}
+                {{/if}}
+            </div>
+        </div>
+    {{/ inline }}
+
+    {{#* inline "contentColumn" }}
+        <div class="chat">
+            <div class="chat__empty">
+                {{#> LayoutCentered}}
+                    <p class="chat__empty-message">Выберите чат чтобы отправить сообщение</p>
+                {{/ LayoutCentered}}
+            </div>
+        </div>
+    {{/ inline}}
+{{/ LayoutChats }}

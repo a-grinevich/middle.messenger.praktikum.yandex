@@ -1,1 +1,20 @@
-<h1>Register</h1>
+{{#> LayoutCentered }}
+    {{#> ModalContainer }}
+        {{#> FormAuth }}
+            <div class="form__content form-auth__content">
+                <h1 class="form__title form-auth__title">Регистрация</h1>
+                {{> InputText label="Почта" id="email" name="email" type="text" value="" }}
+                {{> InputText label="Логин" id="login" name="login" type="text" value="" }}
+                {{> InputText label="Имя" id="first_name" name="first_name" type="text" value="" }}
+                {{> InputText label="Фамилия" id="second_name" name="second_name" type="text" value="" }}
+                {{> InputText label="Телефон" id="phone" name="phone" type="phone" value="" }}
+                {{> InputText label="Пароль" id="password" name="password" type="password" value="" }}
+                {{> InputText label="Пароль еще раз" id="confirm-password" name="confirm-password" type="password" value="" }}
+            </div>
+            <p class="form__buttons form-auth__buttons">
+                {{> Button text="Зарегистрироваться" id="signin" classModifier="button_primary button_wide" }}
+                {{> Link href="login" text="Войти" class="button button_secondary button_wide"  data-page="login" }}
+            </p>
+        {{/ FormAuth }}
+    {{/ ModalContainer }}
+{{/ LayoutCentered }}

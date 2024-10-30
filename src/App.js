@@ -1,12 +1,17 @@
 import Handlebars from "handlebars";
 import * as Pages from "./pages";
 import * as Components from "./components";
-import { mockPages } from "./mockData.js";
+import * as Layouts from "./layouts";
+import { mockChats, mockPages } from "./mockData.js";
 import "./helpers/handlebarsHelpers.js";
 
 // Register partials
 Object.entries(Components).forEach(([name, component]) => {
   Handlebars.registerPartial(name, component);
+});
+
+Object.entries(Layouts).forEach(([name, layout]) => {
+  Handlebars.registerPartial(name, layout);
 });
 
 export default class App {
@@ -33,6 +38,9 @@ export default class App {
       chat: {
         title: "Список чатов и лента переписки",
         page: Pages.ChatPage,
+        context: {
+          chats: [...mockChats, ...mockChats],
+        },
       },
       settings: {
         title: "Настройки пользователя",
@@ -42,14 +50,16 @@ export default class App {
         title: "Страница 404",
         page: Pages.ErrorPage,
         context: {
-          code: "404"
+          code: "404",
+          text: "Не туда попали",
         },
       },
       500: {
         title: "Страница 5**",
         page: Pages.ErrorPage,
         context: {
-          code: "500"
+          code: "500",
+          text: "Мы уже фиксим",
         },
       },
     };
@@ -64,11 +74,14 @@ export default class App {
   }
 
   attachEventListeners() {
-    const navigationLinks = document.querySelectorAll(".navigation-link");
-    navigationLinks.forEach((link) => {
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
       link.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.changePage(e.target.dataset.page);
+        const page = e.target.dataset.page;
+        if (page) {
+          e.preventDefault();
+          this.changePage(page);
+        }
       });
     });
     window.addEventListener(
