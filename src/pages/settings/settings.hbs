@@ -1,0 +1,33 @@
+{{#> LayoutCentered}}
+    <div class="profile">
+        <form action="" class="profile-form">
+            <div class="user">
+                {{> Avatar classModifier="user__avatar" }}
+                <div class="user__name">Иван</div>
+            </div>
+            <fieldset class="profile-form__fieldset" disabled>
+                {{> InputText label="Почта" id="email" name="email" type="text" value="pochta@yandex.ru" classModifier="input-text_wide profile-form__input-text profile-form__item"}}
+                {{> InputText label="Логин" id="login" name="login" type="text" value="ivanivanov" classModifier="input-text_wide profile-form__input-text profile-form__item"}}
+                {{> InputText label="Имя" id="first_name" name="first_name" type="text" value="Иван" classModifier="input-text_wide profile-form__input-text profile-form__item"}}
+                {{> InputText label="Фамилия" id="second_name" name="second_name" type="text" value="Иванов" classModifier="input-text_wide profile-form__input-text profile-form__item"}}
+                {{> InputText label="Имя в чате" id="display_name" name="display_name" type="text" value="Иван" classModifier="input-text_wide profile-form__input-text profile-form__item"}}
+                {{> InputText label="Телефон" id="phone" name="phone" type="text" value="+7 (909) 967 30 30" classModifier="input-text_wide profile-form__input-text profile-form__item"}}
+            </fieldset>
+
+            <div class="profile-form__item">
+                {{> Link href="#" text="Изменить данные" class="" }}
+            </div>
+            <div class="profile-form__item">
+                {{> Link href="#" text="Изменить пароль" class="" }}
+            </div>
+            <div class="profile-form__item">
+                {{> Link href="chat" text="Выйти" class="profile-form__leave"  data-page="chat" }}
+            </div>
+        </form>
+
+        <div class="profile__back">
+            {{> Link href="chat" text="" class="button button_round button_round_icon-back profile__back-button"  data-page="chat" }}
+        </div>
+    </div>
+    
+{{/LayoutCentered}}

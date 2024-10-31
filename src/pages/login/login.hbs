@@ -1,0 +1,15 @@
+{{#> LayoutCentered }}
+    {{#> ModalContainer }}
+        {{#> FormAuth }}
+            <div class="form__content form-auth__content">
+                <h1 class="form__title form-auth__title">Вход</h1>
+                {{> InputText label="Логин" id="login" name="login" type="text" value="" }}
+                {{> InputText label="Пароль" id="password" name="password" type="password" value="" }}
+            </div>
+            <p class="form__buttons form-auth__buttons">
+                {{> Button text="Войти" id="signin" classModifier="button_primary button_wide" }}
+                {{> Link href="register" text="Нет аккаунта?" class="button button_secondary button_wide"  data-page="register" }}
+            </p>
+        {{/ FormAuth }}
+    {{/ ModalContainer }}
+{{/ LayoutCentered }}
